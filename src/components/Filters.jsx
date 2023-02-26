@@ -1,4 +1,5 @@
-import { useId, useState } from 'react'
+import { useEffect, useId, useState } from 'react'
+import useDebounce from '../hooks/useDebounce'
 import useMovies from '../hooks/useMovies'
 
 function Filters () {
@@ -6,11 +7,15 @@ function Filters () {
   const sortId = useId()
   const [search, setSearch] = useState('')
   const { getMovies, setSort } = useMovies()
+  const { debounce } = useDebounce({ value: search, delay: 500 })
+
+  useEffect(() => {
+    getMovies(debounce)
+  }, [debounce])
 
   const handleSearch = (event) => {
     const newSearch = event.target.value
     setSearch(newSearch)
-    getMovies(newSearch)
   }
 
   const handleSubmit = (event) => {
