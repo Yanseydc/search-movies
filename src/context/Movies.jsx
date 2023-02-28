@@ -8,14 +8,12 @@ const MoviesProvider = ({ children }) => {
   const [sort, setSort] = useState(false)
 
   const getMovies = async (search) => {
-    console.log('getting movies...')
     const filteredMovies = await getMoviesBySearch({ search })
     setMovies(filteredMovies)
   }
 
   const sortMovies = useMemo(() => {
     if (movies.length === 0) return movies
-    console.log('sorting...')
     return sort
       ? [...movies].sort((a, b) => a.title.localeCompare(b.title))
       : movies

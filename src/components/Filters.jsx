@@ -20,7 +20,6 @@ function Filters () {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log('handle submit')
   }
 
   const handleChange = (event) => {
