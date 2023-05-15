@@ -1,1 +1,0 @@
-@import"https://fonts.googleapis.com/css2?family=Poppins&display=swap";body{font-family:Poppins,sans-serif;background-color:#202124;color:#fff}.movies{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}.header{background-color:coral;padding:20px;text-align:center;box-shadow:0 0 10px #00000080}*{margin:0;padding:0;box-sizing:border-box}
