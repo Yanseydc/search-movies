@@ -1,5 +1,5 @@
 const OMDBAPI_KEY = import.meta.env.VITE_OMDBAPI_KEY
-const OMDBAPI_URL = import.meta.env.VITE_OMDBAPI_URL
+const OMDBAPI_URL = import.meta.env.VITE_OMDBAPI_URL ?? 'http://www.omdbapi.com'
 
 const getMoviesBySearch = async ({ search }) => {
   try {
