@@ -1,8 +1,9 @@
 const OMDBAPI_KEY = import.meta.env.VITE_OMDBAPI_KEY
+const OMDBAPI_URL = import.meta.env.VITE_OMDBAPI_URL
 
 const getMoviesBySearch = async ({ search }) => {
   try {
-    const response = await fetch(`http://www.omdbapi.com/?apikey=${OMDBAPI_KEY}&s=${search}`)
+    const response = await fetch(`${OMDBAPI_URL}/?apikey=${OMDBAPI_KEY}&s=${search}`)
     if (!response.ok) {
       throw new Error('Error fetching data')
     }
